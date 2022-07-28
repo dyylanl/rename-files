@@ -2,12 +2,13 @@ from hashlib import new
 import os
 from re import I
 try:
+    end = input('Ingrese la extension del archivo: ')
     ejemplo_dir = input('Ingrese la ruta a escanear: ')
     contenido = os.listdir(ejemplo_dir)
     files = []
     index = 0
     for fichero in contenido:
-        if os.path.isfile(os.path.join(ejemplo_dir, fichero)):# and fichero.endswith('.jpg'):
+        if os.path.isfile(os.path.join(ejemplo_dir, fichero)) and fichero.endswith(end):
             files.append(fichero)
             print('Nombre actual: ' + files[index])
             new_name = (files[index]+''+str(index))
@@ -17,4 +18,4 @@ try:
                 os.rename(files[index], new_name)
             index += 1
 except:
-    print('Error. Abortando...')
+    print('Error...')

@@ -9,7 +9,7 @@ try:
     for fichero in contenido:
         if os.path.isfile(os.path.join(ejemplo_dir, fichero)):# and fichero.endswith('.jpg'):
             files.append(fichero)
-            print('Cambiando nombre de: ' + files[index])
+            print('Nombre actual: ' + files[index])
             new_name = (files[index]+''+str(index))
             print('Nuevo nombre: '+new_name)
             res = input('Desea cambiarlo? y/n: ')

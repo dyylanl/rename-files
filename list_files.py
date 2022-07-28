@@ -15,5 +15,6 @@ try:
             res = input('Desea cambiarlo? y/n: ')
             if (res == 'y'):
                 os.rename(files[index], new_name)
+            index += 1
 except:
     print('Error. Abortando...')

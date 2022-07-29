@@ -17,7 +17,7 @@ def scan(aut, path, extension):
                         new_name = input('Ingrese el nuevo nombre: ')
                         os.rename(file,new_name)
     except(FileNotFoundError):
-        print('Error, ingreso una ruta invalida.')
+        print('Error. Ruta invalida.')
     except(KeyboardInterrupt):
         print('')
         print('Adios!')

@@ -1,21 +1,21 @@
 from hashlib import new
 import os
-from re import I
-try:
-    end = input('Ingrese la extension del archivo: ')
-    ejemplo_dir = input('Ingrese la ruta a escanear: ')
-    contenido = os.listdir(ejemplo_dir)
+
+
+def scan(path, extension):
+    contenido = os.listdir(path)
     files = []
     index = 0
-    for fichero in contenido:
-        if os.path.isfile(os.path.join(ejemplo_dir, fichero)) and fichero.endswith(end):
-            files.append(fichero)
-            print('Nombre actual: ' + files[index])
-            new_name = (files[index]+''+str(index))
-            print('Nuevo nombre: '+new_name)
-            res = input('Desea cambiarlo? y/n: ')
+    if (extension==""):
+        extension="*"
+    for file in contenido:
+        if (os.path.isfile(os.path.join(path, file)) and file.endswith(extension)):
+            res = input('Desea cambiar el nombre de ' +file+'? [y/n]: ')
             if (res == 'y'):
-                os.rename(files[index], new_name)
-            index += 1
-except:
-    print('Error...')
+                new_name = input('Ingrese el nuevo nombre: ')
+                os.rename(file,new_name)
+
+
+path = input('Ingrese la ruta de los archivos a procesar: ')
+extension = input('Ingrese la extension: ')
+scan(path,extension)

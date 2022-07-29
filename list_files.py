@@ -25,7 +25,7 @@ def scan(aut, path, extension):
 def main():
     res = input('Cambiar nombre automaticamente? [y/n]: ')
     path = input('Ingrese la ruta de los archivos a procesar: ')
-    extension = input('Ingrese la extension (deje en blanco para procesar todas las extensiones): ')
+    extension = input('Ingrese la extension (deje en blanco para procesar todos los archivos): ')
     scan(res, path, extension)
 
 main()
